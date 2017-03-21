@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Documents</title>
+</head>
+<!--  jquery -->
+<script  src ="scripts/jquery-3.1.0.min.js" ></script>
+<body>
+
+
+
+  <fieldset>
+  <label for="upload"></label>
+
+    <div class="" id="items">
+
+      <input class="input" name="upload[]" type="file">
+    </div>
+    <div class="input-fields" id="click">
+       <button id="add" class="btn" onclick ="myFunction()"> AddMoreDocuemtns </button>
+    </div>
+
+  </fieldset>
+</body>
+</html>
+<script>
+//vendor
+var count = 0;
+$('#add').click(function (e){
+  // append a new row of code to the items div
+  $("#items").append('<div><input class="" name="input[]" type="file"> <button class="delete">Delete </button></div>');
+
+  if(count == 5){
+    $(this).attr("disabled",true);
+  }
+
+});
+
+ /* document.getElementById("add").disabled = true;*/
+
+
+//delete button
+$("body").on("click", ".delete", function(e){
+ $(this).parent("div").remove();
+});
+
+
+
+//disable the button after a certain amount of clicks
+
+
+</script>

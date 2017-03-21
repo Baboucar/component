@@ -4,14 +4,16 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--   jquery plugin -->
+  <script  src ="scripts/jquery-3.1.0.min.js" ></script>
 
   <title>HTML and SASS Template for Experimenting Code</title>
   <meta name="description" content="This is a blank HTML and SASS template for experimenting code">
-  <meta name="author" content="Abd Al-Ala Camara - tixibit.com">
+  <meta name="author" content="baboucarr - tixibit.com">
 
   <!-- normalize CSS Project -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  
+
   <link rel="stylesheet" href="styles/css/main.css">
 
   <!--[if lt IE 9]>
@@ -23,10 +25,155 @@
   <!-- TODO CODE BELOW THIS LINE -->
 
 
+<!-- form for user creating an account -->
+
+<fieldset>
+
+<div class="header">
+  <h3>Create Account</h3>
+</div>
+
+  <div class="">
+    <label for="firstName">First Name</label>
+    <input class="input" id="first" name="firstName" type="text" required>
+  </div>
+
+  <div class= "">
+    <label for="lastName">Last Name</label>
+    <input class="input" id="lastName" name="lastName" type="text" required>
+  </div>
 
 
+ <div class="">
+    <label for="email">Email</label>
+    <input class="input"  id="email" name = "email" type="email" required>
+ </div>
 
-  <!-- All Scripts at the bottom of the page -->
-  <script src="scripts/main.js"></script>
+
+ <div class="">
+   <label for="password">Password</label>
+   <input  class="input" id="password" name="password" type="password" required>
+ </div>
+
+
+ <div class="">
+   <label for="password">Confirm Password</label>
+   <input  class="input" id="password" name="password" type="password" required>
+ </div>
+
+
+  <div class="">
+    <input class="btn btn--submit" type="submit" value="Create account">
+  </div>
+</fieldset>
+<!--
+ fieldset for the login form -->
+
+ <fieldset>
+
+<div class="header">
+  <h3>Login</h3>
+</div>
+
+   <div class="">
+      <label for="email">Email</label>
+      <input class="input" id="email" name="email" type="email" required>
+    </div>
+
+    <div class="">
+      <label for="password">Password</label>
+      <input class="input" id="password" name="password" type="password">
+    </div>
+
+    <div class="">
+      <input class="btn btn--submit" type="submit" value="Login">
+    </div>
+
+ </fieldset>
+
+
+<!--
+    fieldset for the guardian details -->
+    <fieldset>
+<div class="header">
+  <h3>Guardian Details</h3>
+</div>
+      <div class="">
+      <label for="firstName"> FirstName </label>
+      <input class = "input" id = "firstName" name = "firstName" type = "text" required>
+      </div>
+
+     <div class = "">
+        <label for = "lastName"> LastName </label>
+        <input class = "input" id = "lastName" name = "lastName" type = "text" required>
+     </div>
+
+     <div class = "">
+       <label for = "phoneNumber">Phone</label>
+       <input class = "input" id = " phoneNumber" type="text" required>
+     </div>
+
+     <div class="">
+       <label for = "address">Address</label>
+       <input class = "input" id="address"   type = "text" required>
+     </div>
+
+     <div class="">
+       <label for="relationship">Relationship With Student</label>
+       <input class= "input" id="relationship" type="text" required>
+     </div>
+
+     <div class="">
+       <input class="btn btn--submit" type="button" value="save">
+     </div>
+
+    </fieldset>
+
+ <!--   field set to add documents -->
+   <fieldset>
+
+   <div class="header">
+  <h3>Upload Documents</h3>
+</div>
+
+  <label for="upload"></label>
+
+    <div class="" id="items">
+      <input class="input" name="upload[]" type="file">
+    </div>
+
+    <div class="input-fields" id="click">
+       <button id="add" class="btn" > AddMoreDocuemtns </button>
+    </div>
+
+  </fieldset>
+
 </body>
 </html>
+
+
+<script>
+//vendor
+var count = 0;
+$('#add').click(function (e){
+
+  // append a new row of code to the items div
+
+  $("#items").append('<div><input class="" name="input[]" type="file"> <button class="delete">Delete </button></div>');
+
+
+
+});
+
+ /* document.getElementById("add").disabled = true;*/
+
+//delete button
+$("body").on("click", ".delete", function(e){
+ $(this).parent("div").remove();
+});
+
+
+//disable the button after a certain amount of clicks
+
+</script>
+
